@@ -19,6 +19,7 @@ public class SwiftFlutterBarcodeScannerPlugin: NSObject, FlutterPlugin, ScanBarc
     public static var cancelButtonText:String=""
     public static var isShowFlashIcon:Bool=false
     var pendingResult:FlutterResult!
+    var controller: BarcodeScannerViewController!
     public static var isContinuousScan:Bool=false
     static var barcodeStream:FlutterEventSink?=nil
     public static var scanMode = ScanMode.QR.index
@@ -48,11 +49,14 @@ public class SwiftFlutterBarcodeScannerPlugin: NSObject, FlutterPlugin, ScanBarc
     
     public func onCancel(withArguments arguments: Any?) -> FlutterError? {
         SwiftFlutterBarcodeScannerPlugin.barcodeStream=nil
+        self.controller.cancelButtonClicked();
         return nil
     }
     
     public static func onBarcodeScanReceiver( barcode:String){
-        barcodeStream!(barcode)
+        if barcodeStream != nil {
+            barcodeStream!(barcode)
+        }
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -89,16 +93,16 @@ public class SwiftFlutterBarcodeScannerPlugin: NSObject, FlutterPlugin, ScanBarc
         }
         
         pendingResult=result
-        let controller = BarcodeScannerViewController()
-        controller.delegate = self
+        self.controller = BarcodeScannerViewController()
+        self.controller.delegate = self
         
         if #available(iOS 13.0, *) {
-            controller.modalPresentationStyle = .fullScreen
+            self.controller.modalPresentationStyle = .fullScreen
         }
         
         if checkCameraAvailability(){
             if checkForCameraPermission() {
-                SwiftFlutterBarcodeScannerPlugin.viewController.present(controller
+                SwiftFlutterBarcodeScannerPlugin.viewController.present(self.controller
                                                                         , animated: true) {
                     
                 }
@@ -106,7 +110,7 @@ public class SwiftFlutterBarcodeScannerPlugin: NSObject, FlutterPlugin, ScanBarc
                 AVCaptureDevice.requestAccess(for: .video) { success in
                     DispatchQueue.main.async {
                         if success {
-                            SwiftFlutterBarcodeScannerPlugin.viewController.present(controller
+                            SwiftFlutterBarcodeScannerPlugin.viewController.present(self.controller
                                                                                     , animated: true) {
                                 
                             }
@@ -456,7 +460,7 @@ class BarcodeScannerViewController: UIViewController {
     
     
     /// Cancel button click event listener
-    @IBAction private func cancelButtonClicked() {
+    @IBAction public func cancelButtonClicked() {
         if SwiftFlutterBarcodeScannerPlugin.isContinuousScan{
             self.dismiss(animated: true, completion: {
                 SwiftFlutterBarcodeScannerPlugin.onBarcodeScanReceiver(barcode: "-1")
