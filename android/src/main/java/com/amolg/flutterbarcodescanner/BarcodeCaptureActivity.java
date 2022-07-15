@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.BroadcastReceiver;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
@@ -151,6 +152,16 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         }
     }
 
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle extras = intent.getExtras();
+            if (extras != null && extras.getBoolean("finish", false)) {
+                finish();
+            }
+        }
+    };
+
     /**
      * Handles the requesting of the camera permission.  This includes
      * showing a "Snackbar" message of why the permission is needed then
@@ -252,6 +263,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     @Override
     protected void onResume() {
         super.onResume();
+        registerReceiver(mReceiver, new IntentFilter(FlutterBarcodeScannerPlugin.BROADCAST_FILTER));
         startCameraSource();
     }
 
@@ -273,6 +285,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unregisterReceiver(mReceiver);
         if (mPreview != null) {
             mPreview.release();
         }

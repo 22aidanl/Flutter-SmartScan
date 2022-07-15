@@ -3,6 +3,7 @@ package com.amolg.flutterbarcodescanner;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -44,6 +45,7 @@ public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityR
     private Map<String, Object> arguments;
 
     private static final String TAG = FlutterBarcodeScannerPlugin.class.getSimpleName();
+    public static final String BROADCAST_FILTER = "FlutterBarcodeScannerPlugin_broadcast_receiver_intent_filter";
     private static final int RC_BARCODE_CAPTURE = 9001;
     public static String lineColor = "";
     public static boolean isShowFlashIcon = false;
@@ -182,6 +184,9 @@ public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityR
     public void onCancel(Object o) {
         try {
             barcodeStream = null;
+            Intent finishIntent = new Intent(BROADCAST_FILTER);
+            finishIntent.putExtra("finish", true);
+            activity.getContext().sendBroadcast(finishIntent);
         } catch (Exception e) {
 
         }
