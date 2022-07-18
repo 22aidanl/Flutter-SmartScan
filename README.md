@@ -1,4 +1,4 @@
-# flutter_barcode_scanner
+# Flutter-SmartScan
 
 A plugin for Flutter apps that adds barcode scanning support on both Android and iOS.
 
@@ -7,10 +7,14 @@ A plugin for Flutter apps that adds barcode scanning support on both Android and
 ![Demo gif](https://github.com/AmolGangadhare/MyProfileRepo/blob/master/flutter_barcode_scanning_demo.gif "Demo")
 
 
-## Try example
-Just clone or download the repository, open the project in `Android Studio/ VS Code`, open `pubspec.yaml` and click on `Packages get`.
-Connect device and hit `run`. 
-To run on iPhone you need to run from Xcode first time and just make `pod install` in `example/ios` then run from Xcode.
+## Try the Example Project:
+### iOS
+
+Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, go to the `Runner` target in the project settings, and change Team under `Signing and Capabilities` to your Apple ID. Then, just run `flutter run` in the `example` directory.
+
+### Android
+
+Just run `flutter run` in the `example` directory.
 
 ## Getting Started 
 Follow the steps for Android and iOS
