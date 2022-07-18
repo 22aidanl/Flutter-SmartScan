@@ -24,11 +24,16 @@ class _MyAppState extends State<MyApp> {
         '#ff6666', 'Cancel', true, ScanMode.BARCODE)!;
     StreamSubscription? subscription;
     subscription = stream.listen((barcode) {
+      // Exit the scan when the barcode matches a certain condition
+      // In this case, the barcode starts with "HH", so it matches the format of
+      // a serial number.
       if (barcode.substring(0, 2) == 'HH') {
+        // Update the serial number variable and the corresponding text field.
         setState(() {
           serialNumber = barcode;
           serialNumberController.text = barcode;
         });
+        // Cancel the StreamSubscription to exit the camera scanning view.
         subscription!.cancel();
       }
     });
