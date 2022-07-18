@@ -7,20 +7,16 @@ A plugin for Flutter apps that adds barcode scanning support on both Android and
 ![Demo gif](https://github.com/AmolGangadhare/MyProfileRepo/blob/master/flutter_barcode_scanning_demo.gif "Demo")
 
 
-## Try the Example Project:
+## Try/Get Started From the Example Project:
 ### iOS
 
-Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, go to the **Runner** target in the project settings, and change **Team** under **Signing and Capabilities** to your Apple ID. Then, just run `flutter run` in the **example** directory.
+Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, go to the **Runner** target in the project settings, and change **Team** under **Signing and Capabilities** to your Apple ID. Then, just run `flutter run` in the `example` directory.
 
 ### Android
 
 Download/clone the repository, then run `flutter run` in the `example` directory.
 
 ## Getting Started 
-Follow the steps for Android and iOS
-
-PLEASE FOLLOW **iOS** STEPS CAREFULLY
-
 ### Android
 
 :zap:  Don't worry, you don't need to do anything.
@@ -112,18 +108,3 @@ FlutterBarcodeScanner.getBarcodeStreamReceiver("#ff6666", "Cancel", false, ScanM
          /// barcode to be used
          });
 ```
-
-### Contribution:
-
-would :heart: to see any contribution, give :star:  if you like
-
-### Contact:
-
-
-<p>
-<a href="https://github.com/AmolGangadhare"><img src="https://github.com/AmolGangadhare/MyProfileRepo/blob/master/git_hub_logo.png" width="32" height="33" style="max-width:100%;"></a>
-<a href="https://stackoverflow.com/users/9823185/amol-gangadhare" rel="nofollow"><img src="https://github.com/AmolGangadhare/MyProfileRepo/blob/master/stack_o_logo.svg" width="36" height="36" style="max-width:100%;"></a>
-<a href="https://www.linkedin.com/in/amolgangadhare/" rel="nofollow"><img src="https://github.com/AmolGangadhare/MyProfileRepo/blob/master/linked_in_logo.svg" width="36" height="36" style="max-width:100%;"></a>
-</p>
-
-E-mail: amol.gangadhare@gmail.com
