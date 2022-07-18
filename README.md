@@ -10,11 +10,11 @@ A plugin for Flutter apps that adds barcode scanning support on both Android and
 ## Try the Example Project:
 ### iOS
 
-Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, go to the `Runner` target in the project settings, and change Team under `Signing and Capabilities` to your Apple ID. Then, just run `flutter run` in the `example` directory.
+Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, go to the **Runner** target in the project settings, and change **Team** under **Signing and Capabilities** to your Apple ID. Then, just run `flutter run` in the **example** directory.
 
 ### Android
 
-Just run `flutter run` in the `example` directory.
+Download/clone the repository, then run `flutter run` in the `example` directory.
 
 ## Getting Started 
 Follow the steps for Android and iOS
