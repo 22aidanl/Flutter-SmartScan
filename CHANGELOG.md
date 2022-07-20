@@ -1,3 +1,7 @@
+## 1.0.4
+
+Update changelog
+
 ## 1.0.3
 
 Update license and readme
