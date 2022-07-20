@@ -18,7 +18,7 @@ Download/clone the repository, then run `flutter run` in the `example` directory
 
 ## Adding to an Existing Project:
 
-Run `flutter pub add flutter_smart_scan` in your project's directory. For Android projects, you're done! For iOS projects, follow the additional steps below:
+Run `flutter pub add flutter_smart_scan` in your project's directory. Then, add `import 'package:flutter_smart_scan/flutter_smart_scan.dart';` to any file where you want to use barcode scanning. For Android projects, you're done! For iOS projects, follow the additional steps below:
 
 ### iOS
 
