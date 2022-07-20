@@ -16,5 +16,17 @@ Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, g
 
 Download/clone the repository, then run `flutter run` in the `example` directory.
 
+## Adding to an Existing Project:
+
+Run `flutter pub add flutter_smart_scan` in your project's directory. For Android projects, you're done! For iOS projects, follow the additional steps below:
+
+### iOS
+
+* Open `ios/Runner.xcworkspace` in Xcode
+ * In the project settings, go to the **Info** tab and set **iOS Deployment Target** to 12.0
+ * In the target settings, go to the **General** tab and set the **iOS** value to 12.0 under **Minimum Deployments** 
+ * In the target settings, go to the **Signing and Capabilities** tab and change **Team** under **Signing and Capabilities** to your Apple ID.
+
+
 ## Help
-This repository is a modified version of the [flutter_barcode_scanner repository, available here.](https://github.com/AmolGangadhare/flutter_barcode_scanner) The modifications allow you to exit the continuous barcode scanning mode at any point (for example, after a certain barcode is found). Read the comments in `example/lib/main.dart` to see how this is done.
+This repository is a modified version of the [flutter_barcode_scanner repository, available here.](https://github.com/AmolGangadhare/flutter_barcode_scanner) The modifications allow you to exit the continuous barcode scanning mode at any point (for example, after a certain barcode is found). Read the comments in `example/lib/main.dart` to see how this is done. The other functionalities are identical to the flutter_barcode_scanner repository, so you can use its documentation as needed.
