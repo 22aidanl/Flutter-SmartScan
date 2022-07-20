@@ -2,7 +2,7 @@
 
 A plugin for Flutter apps that adds barcode scanning support on both Android and iOS.
 
-[![pub package](https://img.shields.io/pub/v/flutter_barcode_scanner.svg)](https://pub.dartlang.org/packages/flutter_barcode_scanner)
+[![pub package](https://img.shields.io/pub/v/flutter_smart_scan.svg)](https://pub.dartlang.org/packages/flutter_smart_scan)
 
 ![Demo gif](https://github.com/AmolGangadhare/MyProfileRepo/blob/master/flutter_barcode_scanning_demo.gif "Demo")
 
@@ -17,4 +17,4 @@ Download/clone the repository, open `example/ios/Runner.xcworkspace` in Xcode, g
 Download/clone the repository, then run `flutter run` in the `example` directory.
 
 ## Help
-This repository is a modified version of the [flutter_barcode_scanner repository, available here.](https://github.com/AmolGangadhare/flutter_barcode_scanner) The modifications allow you to exit the continuous barcode scanning mode at any point (for example, after a certain barcode is found). Read the comments in `example/lib/main.dart` to see how this is done.
+This repository is a modified version of the [flutter_smart_scan repository, available here.](https://github.com/AmolGangadhare/flutter_smart_scan) The modifications allow you to exit the continuous barcode scanning mode at any point (for example, after a certain barcode is found). Read the comments in `example/lib/main.dart` to see how this is done.

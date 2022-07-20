@@ -1,5 +1,5 @@
 #import "FlutterBarcodeScannerPlugin.h"
-#import <flutter_barcode_scanner/flutter_barcode_scanner-Swift.h>
+#import <flutter_smart_scan/flutter_smart_scan-Swift.h>
 
 @implementation FlutterBarcodeScannerPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

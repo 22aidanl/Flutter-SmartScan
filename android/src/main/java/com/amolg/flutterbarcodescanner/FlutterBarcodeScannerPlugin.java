@@ -38,7 +38,7 @@ import io.flutter.embedding.engine.plugins.lifecycle.FlutterLifecycleAdapter;
  * FlutterBarcodeScannerPlugin
  */
 public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityResultListener, StreamHandler, FlutterPlugin, ActivityAware {
-    private static final String CHANNEL = "flutter_barcode_scanner";
+    private static final String CHANNEL = "flutter_smart_scan";
 
     private static FlutterActivity activity;
     private static Result pendingResult;
@@ -252,7 +252,7 @@ public class FlutterBarcodeScannerPlugin implements MethodCallHandler, ActivityR
 
         this.activity = (FlutterActivity) activity;
         eventChannel =
-                new EventChannel(messenger, "flutter_barcode_scanner_receiver");
+                new EventChannel(messenger, "flutter_smart_scan_receiver");
         eventChannel.setStreamHandler(this);
 
 

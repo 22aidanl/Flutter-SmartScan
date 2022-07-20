@@ -1,3 +1,3 @@
-# flutter_barcode_scanner_example
+# flutter_smart_scan_example
 
-Demonstrates how to use the flutter_barcode_scanner plugin.
+Demonstrates how to use the flutter_smart_scan plugin.
