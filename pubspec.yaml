@@ -1,6 +1,6 @@
 name: flutter_smart_scan
 description: A plugin for scanning barcodes on Android and iOS. Supports barcodes, QR codes, etc.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/22aidanl/Flutter-SmartScan
 
 environment:
